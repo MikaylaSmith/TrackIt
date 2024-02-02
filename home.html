@@ -1,0 +1,100 @@
+<?php
+		session_start();
+		require_once('db.php');
+
+		if (isset($_SESSION['message'])) {
+			$message = $_SESSION['message'];
+			unset($_SESSION['message']);
+		}
+		
+	//Title that will be shown to the user
+	$title_displayed = '';
+
+	//Option that will be displayed to user
+	$new_option = '';
+	$view_option = '';
+
+	//Route to file that user is given
+	$new_file_route = '';
+	$view_file_route = '';
+
+	$student_access = $_SESSION['logged_in_user']['studentAccess'];
+	$journal_access = $_SESSION['logged_in_user']['journalAccess'];
+	$budget_access = $_SESSION['logged_in_user']['budgetAccess'];
+
+	//Based on what access is available, changes what gets displayed to the user on the main page
+	if ($student_access == "true"){
+		$title_displayed = "Education and Student Logs";
+
+		$new_option = 'New Log';
+		$view_option = 'View Logs';
+
+		$new_file_route = 'add_log.php';
+		$view_file_route = "logs.php";
+	}
+	elseif ($journal_access == "true") {
+		$title_displayed = "Journal Entries";
+
+		$new_option = 'New Entry';
+		$view_option = 'View Entries';
+
+		$new_file_route = 'add_journal.php';
+		$view_file_route = "journals.php";
+	}
+	elseif ($budget_access == "true") {
+		$title_displayed = "Budget Entries";
+
+		$new_option = 'New Entry';
+		$view_option = 'View Entries';
+
+		$new_file_route = 'add_budget.php';
+		$view_file_route = "budgets.php";
+	}
+	else {
+		//If there is nothng set, assume bad access and go to login
+		header('Location: login.html');
+	}
+
+
+?>
+
+
+
+<?php
+include('header.html');
+?>
+
+
+<main role="main" class="container">
+
+	<div class="container text-center">
+		<h1>Welcome To TrackIt</h1>
+		<img src="TrackItApp.png" style="width: 200px; height: 200px;">
+		<hr>
+		<p>How do you want to get to your <?=$title_displayed?>?</p>
+		<br>
+		<span>
+			<a class="btn btn-primary" href="<?=$new_file_route?>" type="button"><?=$new_option?></a>
+			<a class="btn btn-secondary" href="<?=$view_file_route?>" type="button"><?=$view_option?></a>
+		</span>
+	</div>
+
+
+</main>
+
+
+
+<?php
+    //include('footer.html');
+?>
+
+<link rel="stylesheet" href="includes/bootstrap-select/css/bootstrap-select.min.css">
+<script src="includes/jquery-3.3.1.min.js"></script>
+<script src="includes/bootstrap.js" ></script>
+<script src="includes/bootstrap-select/js/bootstrap-select.min.js"></script>
+
+<script>
+
+</script>
+
+</body></html>

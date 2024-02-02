@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+
+    <link rel="icon" type="image/ico" href="favicon-logo.ico">
+    <title>TrackIt</title>
+
+    <link href="includes/bootstrap.css" rel="stylesheet" >
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+        .navbar-nav li:hover > ul.dropdown-menu {
+          display: block;
+        }
+        .dropdown-submenu {
+          position:relative;
+        }
+        .dropdown-submenu > .dropdown-menu {
+          top: 0;
+          left: 100%;
+          margin-top:-6px;
+        }
+
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="includes/starter-template.css" rel="stylesheet">
+</head>
+
+<?php
+session_start();
+$create_account_view = (!isset($_SESSION['logged_in_user']['id'])) ? 'style=display:none;' : '';
+$show_education_options = ($_SESSION['logged_in_user']['studentAccess'] == 'true') ? '' : 'style=display:none;';
+$show_journal_options = ($_SESSION['logged_in_user']['journalAccess'] == 'true') ? '' : 'style=display:none;';
+$show_budget_options = ($_SESSION['logged_in_user']['budgetAccess'] == 'true' ) ? '' : 'style=display:none;';
+
+$signed_in_name = $_SESSION['logged_in_user']['username'];
+?>
+
+<body>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" <?=$create_account_view?>>
+    <img src="favicon-32x32.png" alt="TrackIt Logo">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="home.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" <?=$show_education_options?>>
+              <a class="nav-link" href="logs.php">Education Logs</a>
+            </li>
+            <li class="nav-item" <?=$show_education_options?>>
+                <a class="nav-link" href="students.php">Students</a>
+            </li>
+
+            <li class="nav-item" <?=$show_journal_options?>>
+              <a class="nav-link" href="journals.php">Journal Entries</a>
+            </li>
+
+            <li class="nav-item" <?=$show_budget_options?>>
+              <a class="nav-link" href="budgets.php">Budget Entries</a>
+            </li>
+
+            <li class="nav-item" <?=$show_budget_options?>>
+              <a class="nav-link" href="budget_totals.php">Budget Totals</a>
+            </li>
+        </ul>
+        <a class="btn btn-light" href="account.php" type="button">My Account</a>
+    </div>
+</nav>
+<script src="includes/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="includes/DataTables/datatables.min.css"/>
+<script type="text/javascript" src="includes/DataTables/datatables.min.js"></script>
+
+</body>
