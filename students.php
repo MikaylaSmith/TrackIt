@@ -1,5 +1,9 @@
 <?php
-
+// Filename: students.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Query the database and list all entered student information
 session_start();
 
 

@@ -1,4 +1,9 @@
 <?php
+// Filename: home.html
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Home landing page for when users log in, tailored to what a user has access to 
 		session_start();
 		require_once('db.php');
 
@@ -6,7 +11,7 @@
 			$message = $_SESSION['message'];
 			unset($_SESSION['message']);
 		}
-		
+
 	//Title that will be shown to the user
 	$title_displayed = '';
 

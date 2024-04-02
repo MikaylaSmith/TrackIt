@@ -1,5 +1,9 @@
 <?php
-
+// Filename: journals.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Query the database and list all of the journal entries
 session_start();
 require_once('db.php');
 

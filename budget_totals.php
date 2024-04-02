@@ -1,4 +1,10 @@
 <?php
+// Filename: budget_totals.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Query the database and calculate the total amount spent per store
+// based on what has been entered
 
 session_start();
 require_once('db.php');

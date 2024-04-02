@@ -1,5 +1,9 @@
 <?php
-
+// Filename: ajax.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Delete information from the database in an async call
 session_start();
 require_once('db.php');
 

@@ -1,4 +1,10 @@
 <?php
+// Filename: account.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+//	Manage the information for an individual user so that it can be edited or simply known
+
 		session_start();
 		require_once('db.php');
 

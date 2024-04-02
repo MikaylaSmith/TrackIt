@@ -1,5 +1,9 @@
 <?php
-
+// Filename: add_log.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Create or edit an education log then write to the database
 session_start();
 
 

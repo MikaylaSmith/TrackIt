@@ -1,4 +1,10 @@
 <?php
+// Filename: create_account.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Create brand new account without having access to the rest of the site.
+
 	include('header.html');
 ?>
 

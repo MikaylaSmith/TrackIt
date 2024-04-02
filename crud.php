@@ -1,4 +1,10 @@
 <?php
+// Filename: crud.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Create and edit informatoin for
+// Education Logs, Students, Journal Entries, Budget Logs
 session_start();
 
 

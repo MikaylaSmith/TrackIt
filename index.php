@@ -1,4 +1,9 @@
 <?php
+// Filename: index.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Main page, starting spot for the entire site
 
 session_start();
 

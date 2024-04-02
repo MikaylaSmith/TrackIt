@@ -1,4 +1,9 @@
 <?php
+// Filename: add_budget.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Create or edit a budget log then write to the database
 
 session_start();
 

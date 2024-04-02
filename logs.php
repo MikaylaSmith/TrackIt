@@ -1,5 +1,9 @@
 <?php
-
+// Filename: logs.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Query the databse and list all of the entered education logs
 session_start();
 require_once('db.php');
 

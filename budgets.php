@@ -1,5 +1,9 @@
 <?php
-
+// Filename: budgets.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Query the databse and list out each individual entry that has been made
 session_start();
 require_once('db.php');
 

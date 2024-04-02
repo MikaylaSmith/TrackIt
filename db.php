@@ -1,5 +1,9 @@
 <?php
-
+// Filename: db.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Facilitates the connection to the database
 if (!$settings) {
     $settings = parse_ini_file('environment.ini.php', true);
 }

@@ -1,5 +1,9 @@
 <?php
-
+// Filename: add_student.php
+// Author: Mikayla Smith
+// Date: 04/02/2024
+// Purpose:
+// Create or edit a student's information then write to the database
 session_start();
 
 
@@ -18,7 +22,7 @@ if ($_SESSION['logged_in_user']['id'] > 0 && $_SESSION['logged_in_user']['studen
       $editing = true;
       //Get the information for the student to be edited
       $student_query = "SELECT * FROM students
-                        WHERE student_id = '".mysqli_real_escape_string($link, $_GET['edit_student'])."' 
+                        WHERE student_id = '".mysqli_real_escape_string($link, $_GET['edit_student'])."'
                         AND user_id = '".$_SESSION['logged_in_user']['id']."';";
       $student_result = mysqli_query($link, $student_query);
 
